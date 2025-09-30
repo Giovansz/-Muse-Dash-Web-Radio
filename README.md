@@ -1,7 +1,6 @@
 <h1>Muse Dash: Web Radio</h1> 
 
 Uma página web temática inspirada no jogo Muse Dash, desenvolvida como atividade prática para explorar HTML e CSS, com foco na aplicação de áudio e design visual.
-O site está hospedado no GitHub Pages para fácil acesso online.
 
 <h3>📜 Descrição </h3>
 
