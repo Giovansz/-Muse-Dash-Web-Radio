@@ -1,0 +1,26 @@
+[
+  {
+    "titulo": "INTERNET OVERDOSE",
+    "artista": "Aiobahn 81 (feat. KOTOKO)",
+    "capa": "content-images/INTERNET_OVERDOSE.png",
+    "arquivo": "musics-content/Aiobahn _81_feat._KOTOKO_-_INTERNET_OVERDOSE.mp3"
+  },
+  {
+    "titulo": "Believing and Being",
+    "artista": "Sister Marija (from PEROPERO Games)",
+    "capa": "content-images/Believing_and_Being.png",
+    "arquivo": "musics-content/Believing_and_Being.mp3"
+  },
+  {
+    "titulo": "Say Fanfare!",
+    "artista": "Fubuki Shirakami",
+    "capa": "content-images/Say_Fanfare.png",
+    "arquivo": "musics-content/Say_Fanfare_-_Fubuki_Shirakami.mp3"
+  },
+  {
+    "titulo": "Koi no Moonlight",
+    "artista": "REDALiCE (feat. 犬山たまき)",
+    "capa": "content-images/Koi_no_Moonlight.png",
+    "arquivo": "musics-content/Koi_no_Moonlight.mp3"
+  }
+]

@@ -1,50 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muse Dash - Radio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="content-images/muse-Radio.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muse Dash - Radio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="content-images/muse-Radio.png" type="image/x-icon">
 </head>
+
 <body>
-    <header>
-        <div id="title" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)">
-            <img style="width: 200px; height: 30px; margin-top: 10px;" src="content-images/Logo_Name.png" alt="Muse Radio">
-        </div>
-    </header>
-    <main>
-        <div class="cards">
-            <div id="card1">
-                <img style="border-radius: 50%; width: 200px; height: 200px; margin-top: 25px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)" src="content-images/INTERNET_OVERDOSE.png" alt="Aiobahn  81 feat. KOTOKO - INTERNET OVERDOSE">
-                <br>
-                <h2>INTERNET OVERDOSE</h2>
-                <p>Aiobahn  81 feat. KOTOKO</p>
-                <audio src="musics-content/Aiobahn  81 feat. KOTOKO - INTERNET OVERDOSE.mp3" type="audio/mpeg" controls pause></audio>
-            </div>
-            <div id="card2">
-                <img style="border-radius: 50%; width: 200px; height: 200px; margin-top: 25px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)" src="content-images/Believing_and_Being.png" alt="believing and being">
-                <br>
-                <h2>Believing and Being</h2>
-                <p>Sister Marija (PEROPERO)</p>
-                <audio src="musics-content/Believing and Being.mp3" type="audio/mpeg" controls pause></audio>
-            </div>
-            <div id="card3">
-                <img style="border-radius: 50%; width: 200px; height: 200px; margin-top: 25px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);" src="content-images/Say_Fanfare.png" alt="Say Fanfare - Fubuki Shirakami">
-                <br>
-                <h2>Say Fanfare!</h2>
-                <p>Fubuki Shirakami</p>
-                <audio src="musics-content/Say_ Fanfare_ - Fubuki Shirakami.mp3" type="audio/mpeg" controls pause></audio>
-            </div>
-            <div id="card4">
-                <img style="border-radius: 50%; width: 200px; height: 200px; margin-top: 25px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)" src="content-images/Koi_no_Moonlight.png" alt="Koi no Moonlight">
-                <br>
-                <h2>Koi no Moonlight</h2>
-                <p>REDALiCE feat. 犬山たまき</p>
-                <audio src="musics-content/Koi no Moonlight.mp3" type="audio/mpeg" controls pause></audio>
-            </div>
-        </div>
-    </main>
-    
+  <header>
+    <div id="title" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)">
+      <img style="width: 200px; height: 30px; margin-top: 10px;" 
+           src="content-images/Logo_Name.png" 
+           alt="Muse Radio">
+    </div>
+  </header>
+
+  <main>
+    <div class="cards" id="music-container">
+      <!-- Cards serão carregados automaticamente pelo script -->
+    </div>
+  </main>
+
+  <script>
+    async function carregarMusicas() {
+      try {
+        const resposta = await fetch('musics.json');
+        
+        if (!resposta.ok) {
+          throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+        
+        const musicas = await resposta.json();
+        const container = document.getElementById('music-container');
+        container.innerHTML = '';
+
+        // Paleta de cores para os cards
+        const cores = [
+          { fundo: 'rgb(65, 35, 148)', cor: 'white' },
+          { fundo: 'rgb(21, 15, 34)', cor: 'white' },
+          { fundo: 'rgb(232, 253, 253)', cor: 'black' },
+          { fundo: 'rgb(255, 238, 146)', cor: 'black' }
+        ];
+
+        musicas.forEach((musica, index) => {
+          const card = document.createElement('div');
+          card.classList.add('music-card');
+
+          // Define cor e tema conforme posição
+          const tema = cores[index % cores.length];
+          card.style.backgroundColor = tema.fundo;
+          card.style.color = tema.cor;
+
+          card.innerHTML = `
+            <img src="${musica.capa}" 
+                 alt="${musica.titulo}" 
+                 style="border-radius: 50%; width: 200px; height: 200px; margin-top: 25px; 
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.5)">
+            <br>
+            <h2>${musica.titulo}</h2>
+            <p>${musica.artista}</p>
+            <audio controls preload="metadata">
+              <source src="${musica.arquivo}" type="audio/mpeg">
+              Seu navegador não suporta o elemento de áudio.
+            </audio>
+          `;
+
+          container.appendChild(card);
+        });
+
+      } catch (erro) {
+        console.error('Erro ao carregar músicas:', erro);
+        const container = document.getElementById('music-container');
+        container.innerHTML = '<p style="color: white; text-align: center;">Erro ao carregar as músicas. Verifique o console.</p>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', carregarMusicas);
+  </script>
 </body>
 </html>
