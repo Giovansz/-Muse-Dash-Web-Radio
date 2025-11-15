@@ -26,7 +26,7 @@
   {
     "titulo": "Snooze",
     "artista": "Wotaku Feat. SHIKI",
-    "capa": "content-images/Snooze.png",
+    "capa": "content-images/snooze.png",
     "arquivo": "musics-content/snooze_wotaku_feat_SHIKI.mp3"
   },
   {
@@ -47,4 +47,5 @@
     "capa": "content-images/Can_i_friend_you_on_bassbook.jpeg",
     "arquivo": "musics-content/can_i_friend_you_on_bassbook-Camellia_(feat_Nanahira).mp3"
   }
+
 ]
