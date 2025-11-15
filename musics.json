@@ -22,5 +22,29 @@
     "artista": "REDALiCE (feat. 犬山たまき)",
     "capa": "content-images/Koi_no_Moonlight.png",
     "arquivo": "musics-content/Koi_no_Moonlight.mp3"
+  },
+  {
+    "titulo": "Snooze",
+    "artista": "Wotaku Feat. SHIKI",
+    "capa": "content-images/Snooze.png",
+    "arquivo": "musics-content/snooze_wotaku_feat_SHIKI.mp3"
+  },
+  {
+    "titulo": "I Don't Care About Christmas Trough",
+    "artista": "Camellia (feat. Nanahira)",
+    "capa": "content-images/i_dont_care_about_christmas.jpg",
+    "arquivo": "musics-content/I_dont_care_about_Christmas_Though_-_Camellia_(feat_Nanahira).mp3"
+  },
+  {
+    "titulo": "HIT ME UP",
+    "artista": "Kira x Asteroid (Feat. GUMI)",
+    "capa": "content-images/Hit_Me_Up.png",
+    "arquivo": "musics-content/KIRA_x_ASTEROID_-_HIT ME UP_ft_GUMI.mp3"
+  },
+  {
+    "titulo": "Can I Friend You on Bassbook? LOL",
+    "artista": "Camellia (feat. Nanahira)",
+    "capa": "content-images/Can_i_friend_you_on_bassbook.jpeg",
+    "arquivo": "musics-content/can_i_friend_you_on_bassbook-Camellia_(feat_Nanahira).mp3"
   }
 ]
