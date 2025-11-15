@@ -16,3 +16,4 @@ Cada música possui:
 
 - HTML5 – Estrutura da página e elementos <audio>.
 - CSS3 – Estilização e layout responsivo.
+- JS (+JSON) – Script de anexação de conteúdo automático e banco de dados estático.
